@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1b4ea6">
+  <title>百香果 · CAT SUSPECT FILE</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="fabric" aria-hidden="true"></div>
+
+  <button id="sound-btn" class="sound-btn" type="button" aria-pressed="false" aria-label="静音 / 取消静音">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+      <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/>
+      <path class="wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <path class="cross" d="M16 9l6 6M22 9l-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+    <span class="sound-text">SOUND ON</span>
+  </button>
+
+  <main>
+    <!-- SCREEN 1 — the suspect portrait -->
+    <section id="screen-portrait" class="screen active" aria-label="嫌疑猫肖像">
+      <div class="stage">
+        <div class="photo-wrap" id="photo-wrap">
+          <div class="photo-inner">
+            <img id="portrait" src="images/opening-portrait.jpg" alt="橙白相间的猫百香果，头顶上方有一个想着水母的思想气泡" width="1080" height="1080" draggable="false">
+            <div id="pet-zone" class="pet-zone" role="button" tabindex="0"
+                 aria-label="抚摸百香果的头顶：按住并从左向右拖动，或按 Enter"></div>
+            <div class="flash" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="caption-block">
+          <h1 id="cat-name">百香果</h1>
+          <p class="label" id="cat-label">CAT SUSPECT FILE</p>
+          <p class="hint" id="pet-hint">按住猫头，从左向右抚摸 ▸</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 2 — the life records -->
+    <section id="screen-records" class="screen" aria-label="嫌疑猫生平档案" aria-hidden="true" inert>
+      <div class="records-page">
+        <header class="records-head">
+          <button class="back-btn" id="back-to-portrait" type="button">◂ 封面</button>
+          <p class="mono small">SUBJECT: <b>百香果</b> &nbsp;·&nbsp; RECORDS: 03</p>
+        </header>
+        <h2 id="records-title" tabindex="-1">嫌疑猫生平档案</h2>
+        <p class="mono sub">THE SUSPECT'S LIFE RECORDS — 选择一份档案</p>
+        <div id="records-list" class="records"></div>
+      </div>
+    </section>
+
+    <!-- SCREEN 3 — individual photo archive -->
+    <section id="screen-gallery" class="screen" aria-label="照片档案" aria-hidden="true" inert>
+      <div class="gallery-page">
+        <header class="gallery-head">
+          <button class="back-btn" id="back-to-records" type="button">◂ 返回档案</button>
+          <div class="gallery-title">
+            <span class="mono tag" id="gallery-tag">AGE 01</span>
+            <h2 id="gallery-title" tabindex="-1">1 岁 · 刚被捡到</h2>
+          </div>
+          <span class="mono small count" id="gallery-count"></span>
+        </header>
+        <div id="gallery" class="gallery"></div>
+        <p class="mono hint-line">点小图 → 移到中央 &nbsp;·&nbsp; 点大图 → 查看记录</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
